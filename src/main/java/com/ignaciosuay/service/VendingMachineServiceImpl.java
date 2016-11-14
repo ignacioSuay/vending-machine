@@ -26,7 +26,7 @@ public class VendingMachineServiceImpl implements VendingMachineService {
     @Override
     public Collection<Coin> getOptimalChangeFor(int pence) {
         if(pence < 0) {
-            log.warn("Cannot get optimal change for negative pence value");
+            log.error("Cannot get optimal change for negative pence value");
             throw new IllegalArgumentException("Pence value needs to be greater than 0");
         }
         Collection<Coin> optimalCoins = new ArrayList<>();
